@@ -15,7 +15,7 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(bodyParser.json());
 // Connect to Mongoose and set connection variable
-mongoose.connect('mongodb+srv://sa:nopassword@cluster0.fexdw.mongodb.net/etracker?retryWrites=true&w=majority', { useNewUrlParser: true});
+mongoose.connect(process.env.MONGOLAB_URI || 'mongodb+srv://sa:nopassword@cluster0.fexdw.mongodb.net/contact?retryWrites=true&w=majority', { useNewUrlParser: true});
 
 // Heroku Mongoose connection
 // mongoose.connect('mongodb://heroku_5686p02g:sia8l3fni4jmu7qbn0ac1t75mf@ds349857.mlab.com:49857/heroku_5686p02g', { useNewUrlParser: true });
